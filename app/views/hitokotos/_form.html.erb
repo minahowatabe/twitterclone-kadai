@@ -2,8 +2,7 @@
   <% if @hitokoto.errors.any? %>
     <div id="error_explanation">
       <h2><%= @hitokoto.errors.count %>つのエラーがあります。</h2>
-      <ul>
-
+      <ul class = "error_message">
       <% @hitokoto.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
