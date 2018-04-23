@@ -1,0 +1,19 @@
+<h3>この内容で、ヒトコトをpostしますか？</h3>
+
+<%= form_with(model: @hitokoto, url: hitokotos_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>本文:<%= @hitokoto.content %></p>
+  <div class="submit_button">
+  <%= form.submit  "postする" %>
+  </div>
+<% end %>
+
+<br>
+
+<%= form_with(model: @hitokoto, url: new_hitokoto_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <div class="submit_button">
+  <%= form.submit "もどる", name:'back' %>
+  </div>
+<% end %>

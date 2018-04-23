@@ -1,0 +1,26 @@
+<%= form_with(model: @hitokoto, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if @hitokoto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @hitokoto.errors.count %>つのエラーがあります。</h2>
+      <ul>
+
+      <% @hitokoto.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="hitokoto_title">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="submit_button">
+   <%= form.submit %>
+  </div>
+<% end %>
+
+<br>
+<div class="link">
+<%= link_to "Back to Hitokoto Lists", hitokotos_path %>
+</div>

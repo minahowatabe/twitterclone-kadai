@@ -1,0 +1,28 @@
+<div class="list_table">
+<h1>みんな の ヒトコト</h1>
+
+<p><%= notice %></p>
+
+
+<table width="100%" height="100%">
+  <tr>
+    <th>ヒトコト</th>
+  </tr>
+
+<% @hitokotos.each do |hitokoto| %>
+  <tr>
+    <td><%= hitokoto.content %></td>
+    
+    <td><%= link_to 'みる', hitokoto_path(hitokoto.id) %></td>
+    <td><%= link_to "なおす", edit_hitokoto_path(hitokoto.id) %></td>
+    <td><%= link_to 'さくじょする', hitokoto_path(hitokoto.id), method: :delete, data: { confirm: '本当に削除しますか？'}%></td>
+
+  </tr>
+<% end %>
+</table>
+</div>
+
+<br>
+<div class="link">
+<%= link_to ' あたらしいヒトコトをpost ', new_hitokoto_path %>
+</div>

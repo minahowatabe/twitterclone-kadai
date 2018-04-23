@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hitokotoapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+     <header class="header clearfix">
+      <nav>
+       <ul class="top_menu clearfix">
+        <li><%= link_to 'postする', new_hitokoto_path %></li>
+        <li><%= link_to 'ヒトコトをみる', hitokotos_path %></li>
+        <li><%= link_to 'TOP', root_path %></li>
+       </ul>
+      </nav>
+     </header>
+     <footer class="footer">
+       <p>Copyright © Minaho Watabe All RIGHTS RESERVED.</p>
+     </footer>
+    </div>
+    
+    <%= yield %>
+  </body>
+</html>
